@@ -122,11 +122,11 @@ export default function UsersClient({ rows }: { rows: Row[] }) {
               <div className="grid grid-cols-2 gap-3">
                 <div>
                   <label className="fl">Nama mempelai pria</label>
-                  <input name="groom" className="input" required placeholder="Muhammad Fathoni" />
+                  <input name="groom" className="input" required placeholder="Budi Santoso" />
                 </div>
                 <div>
                   <label className="fl">Nama mempelai wanita</label>
-                  <input name="bride" className="input" required placeholder="Elvara Putri" />
+                  <input name="bride" className="input" required placeholder="Sari Dewi" />
                 </div>
               </div>
               <div>

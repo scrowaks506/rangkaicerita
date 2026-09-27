@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  body { font-family:-apple-system,"Segoe UI",Roboto,sans-serif; background:#F5F0EB; color:#2B2320; }
+  .serif { font-family:Georgia,"Times New Roman",serif; }
+  .phone { width:390px; margin:0 auto; min-height:100vh; background:#F5F0EB; padding:24px 20px 90px; position:relative; }
+  .hdr { display:flex; justify-content:space-between; align-items:center; margin-bottom:22px; }
+  .hdr .hi { font-size:12px; color:#9A8B82; }
+  .hdr h1 { font-family:Georgia,serif; font-size:20px; margin-top:2px; }
+  .avatar { width:40px; height:40px; border-radius:50%; background:#EFE7DE; display:flex; align-items:center; justify-content:center; font-size:18px; }
+  .card { background:#fff; border:1px solid #E7DED4; border-radius:16px; padding:16px; margin-bottom:14px; }
+  .row { display:flex; justify-content:space-between; align-items:baseline; }
+  .lbl { font-size:13px; font-weight:600; }
+  .sub { font-size:11px; color:#9A8B82; }
+  .big { font-family:Georgia,serif; font-size:17px; margin:6px 0 10px; }
+  .bar { height:7px; background:#EFE7DE; border-radius:99px; overflow:hidden; }
+  .bar i { display:block; height:100%; background:linear-gradient(90deg,#B58A68,#8B5E3C); border-radius:99px; }
+  .quick { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-bottom:14px; }
+  .quick .card { padding:14px 6px; text-align:center; margin:0; }
+  .quick .ic { font-size:22px; }
+  .quick .t { font-size:11px; font-weight:600; margin-top:5px; }
+  .nav { position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:390px; background:#fff; border-top:1px solid #E7DED4; display:flex; z-index:40; padding-bottom:6px; }
+  .nav a { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 0 6px; font-size:10.5px; font-weight:600; color:#9A8B82; text-decoration:none; }
+  .nav a.on { color:#8B5E3C; }
+  .nav .ic { font-size:20px; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <div class="hdr">
+    <div><div class="hi">Halo, calon pengantin 👋</div><h1>Budi &amp; Sari</h1></div>
+    <div class="avatar">💍</div>
+  </div>
+
+  <div class="card">
+    <div class="row"><span class="lbl">Anggaran</span><span class="sub">0% terpakai</span></div>
+    <div class="big">Rp 0 <span style="font-size:12px;color:#9A8B82;font-family:inherit">terpakai dari Rp 100.0jt</span></div>
+    <div class="bar"><i style="width:0%"></i></div>
+  </div>
+
+  <div class="quick">
+    <div class="card"><div class="ic">💰</div><div class="t">Dana Nikah</div></div>
+    <div class="card"><div class="ic">🤝</div><div class="t">Vendor</div></div>
+    <div class="card"><div class="ic">👥</div><div class="t">Daftar Tamu</div></div>
+  </div>
+
+  <div class="card">
+    <div class="row" style="margin-bottom:8px"><span class="lbl">Checklist persiapan</span><span class="sub" style="color:#8B5E3C;font-weight:600">Lihat semua</span></div>
+    <div class="sub" style="margin-bottom:10px">0 dari 112 tugas selesai</div>
+    <div class="bar"><i style="width:0%"></i></div>
+  </div>
+
+  <div class="card">
+    <div class="row"><div><span class="lbl">Daftar Tamu</span><div class="sub" style="margin-top:2px">0 tamu terdaftar</div></div><span class="sub" style="color:#8B5E3C;font-weight:600">Kelola</span></div>
+  </div>
+
+  <div class="card">
+    <div class="row"><div><span class="lbl">Tanggal akad</span><div class="sub" style="margin-top:2px">Belum ditentukan</div></div><span class="sub" style="color:#8B5E3C;font-weight:600">Atur</span></div>
+  </div>
+
+  <div class="nav">
+    <a class="on"><span class="ic">🏠</span>Beranda</a>
+    <a><span class="ic">✅</span>Checklist</a>
+    <a><span class="ic">👛</span>Anggaran</a>
+    <a><span class="ic">👤</span>Profil</a>
+  </div>
+</div>
+</body>
+</html>

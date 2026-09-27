@@ -2,7 +2,33 @@
 
 Preview desain aplikasi (render dari file HTML statis di folder ini).
 
-## Admin Panel
+## Aplikasi Pengantin (mobile 390px)
+
+Bottom nav 4 menu: **Beranda / Checklist / Anggaran / Profil**. Tamu & Vendor diakses dari Beranda.
+
+### Beranda
+![Beranda](./user-beranda.png)
+
+Sapaan nama pasangan, ringkasan anggaran ("Rp 0 terpakai dari Rp 100.0jt"), quick menu (Dana Nikah / Vendor / Daftar Tamu), progress checklist, daftar tamu, tanggal akad.
+
+### Checklist
+![Checklist](./user-checklist.png)
+
+"10 dari 10 milestone dipilih", tab **Milestone aktif / Pilih milestone**, kartu per-milestone dengan checkbox tugas (contoh: Venue & Akad 6 tugas, Dokumen KUA 12 tugas).
+
+### Anggaran
+![Anggaran](./user-anggaran.png)
+
+3 tab: **Budgeting / Pengeluaran / Dana Nikah**. Total budget "Rp 100.0jt · ubah", form tambah pengeluaran (kategori + jumlah + judul), riwayat pengeluaran.
+
+### Daftar Tamu
+![Daftar Tamu](./user-tamu.png)
+
+Statistik (Tamu / Hadir / Kursi), tombol tambah tamu, list dengan status RSVP (Hadir / Belum konfirmasi / Tidak hadir), tombol kirim undangan WhatsApp (💌), badge ✓ check-in.
+
+---
+
+## Admin Panel (desktop)
 
 ### Dashboard
 ![Admin Dashboard](./admin-dashboard.png)

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  body { font-family:-apple-system,"Segoe UI",Roboto,sans-serif; background:#F5F0EB; color:#2B2320; }
+  .phone { width:390px; margin:0 auto; min-height:100vh; background:#F5F0EB; padding:24px 20px 90px; position:relative; }
+  h1 { font-family:Georgia,serif; font-size:20px; }
+  .sub { font-size:11px; color:#9A8B82; margin-top:2px; }
+  .bar { height:7px; background:#EFE7DE; border-radius:99px; overflow:hidden; margin:10px 0; }
+  .bar i { display:block; height:100%; background:linear-gradient(90deg,#B58A68,#8B5E3C); border-radius:99px; }
+  .tabs { display:flex; gap:8px; margin:18px 0 14px; }
+  .tabs div { flex:1; text-align:center; padding:9px 0; border-radius:99px; font-size:12px; font-weight:600; background:#fff; border:1px solid #E7DED4; color:#6B5B52; }
+  .tabs div.on { background:#8B5E3C; border-color:#8B5E3C; color:#fff; }
+  .card { background:#fff; border:1px solid #E7DED4; border-radius:16px; padding:16px; margin-bottom:12px; }
+  .mhead { display:flex; align-items:center; gap:11px; margin-bottom:10px; }
+  .mhead .ic { font-size:20px; }
+  .mhead .nm { font-size:14px; font-weight:600; }
+  .mhead .ct { font-size:11px; color:#9A8B82; }
+  .chk { width:22px; height:22px; flex:none; border:1.5px solid #E7DED4; border-radius:7px; background:#fff; display:flex; align-items:center; justify-content:center; margin-top:1px; }
+  .chk.on { background:#8B5E3C; border-color:#8B5E3C; color:#fff; font-size:13px; font-weight:700; }
+  .task { display:flex; gap:11px; padding:8px 0; border-top:1px solid #F2EBE3; }
+  .task .tt { font-size:13px; }
+  .task.done .tt { text-decoration:line-through; color:#9A8B82; }
+  .nav { position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:390px; background:#fff; border-top:1px solid #E7DED4; display:flex; z-index:40; padding-bottom:6px; }
+  .nav a { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 0 6px; font-size:10.5px; font-weight:600; color:#9A8B82; text-decoration:none; }
+  .nav a.on { color:#8B5E3C; }
+  .nav .ic { font-size:20px; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <h1>Checklist</h1>
+  <div class="sub">10 dari 10 milestone dipilih</div>
+  <div class="bar"><i style="width:100%"></i></div>
+  <div class="sub">28 dari 112 tugas selesai (25%)</div>
+
+  <div class="tabs">
+    <div class="on">Milestone aktif</div>
+    <div>Pilih milestone</div>
+  </div>
+
+  <div class="card">
+    <div class="mhead"><span class="ic">🏛️</span><div><div class="nm">Venue &amp; Akad</div><div class="ct">6 tugas · 4 selesai</div></div></div>
+    <div class="task done"><span class="chk on">✓</span><span class="tt">Tentukan tanggal akad &amp; resepsi</span></div>
+    <div class="task done"><span class="chk on">✓</span><span class="tt">Survey 3–5 venue pilihan</span></div>
+    <div class="task done"><span class="chk on">✓</span><span class="tt">Booking venue &amp; bayar DP</span></div>
+    <div class="task done"><span class="chk on">✓</span><span class="tt">Konfirmasi layout &amp; dekorasi</span></div>
+    <div class="task"><span class="chk"></span><span class="tt">Gladi resik di venue</span></div>
+    <div class="task"><span class="chk"></span><span class="tt">Cek ulang venue H-3</span></div>
+  </div>
+
+  <div class="card">
+    <div class="mhead"><span class="ic">🤝</span><div><div class="nm">Vendor Utama</div><div class="ct">8 tugas · 2 selesai</div></div></div>
+    <div class="task done"><span class="chk on">✓</span><span class="tt">Booking fotografer &amp; videografer</span></div>
+    <div class="task done"><span class="chk on">✓</span><span class="tt">Booking catering + tes menu</span></div>
+    <div class="task"><span class="chk"></span><span class="tt">Booking dekorasi</span></div>
+    <div class="task"><span class="chk"></span><span class="tt">Booking MC</span></div>
+  </div>
+
+  <div class="card">
+    <div class="mhead"><span class="ic">📋</span><div><div class="nm">Dokumen KUA</div><div class="ct">12 tugas · 0 selesai</div></div></div>
+    <div class="task"><span class="chk"></span><span class="tt">Daftar online di KUA setempat</span></div>
+    <div class="task"><span class="chk"></span><span class="tt">Siapkan KK &amp; KTP kedua mempelai</span></div>
+    <div class="task"><span class="chk"></span><span class="tt">Surat keterangan belum menikah</span></div>
+  </div>
+
+  <div class="nav">
+    <a><span class="ic">🏠</span>Beranda</a>
+    <a class="on"><span class="ic">✅</span>Checklist</a>
+    <a><span class="ic">👛</span>Anggaran</a>
+    <a><span class="ic">👤</span>Profil</a>
+  </div>
+</div>
+</body>
+</html>

@@ -52,12 +52,12 @@ export default function RegisterPage() {
       <form onSubmit={submit} className="flex flex-col gap-4">
         <div>
           <label className="fl">Nama mempelai pria</label>
-          <input className="input" required placeholder="Muhammad Fathoni"
+          <input className="input" required placeholder="Budi Santoso"
             value={groom} onChange={(e) => setGroom(e.target.value)} />
         </div>
         <div>
           <label className="fl">Nama mempelai wanita</label>
-          <input className="input" required placeholder="Elvara Putri"
+          <input className="input" required placeholder="Sari Dewi"
             value={bride} onChange={(e) => setBride(e.target.value)} />
         </div>
         <div>

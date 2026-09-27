@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  body { font-family:-apple-system,"Segoe UI",Roboto,sans-serif; background:#F5F0EB; color:#2B2320; }
+  .phone { width:390px; margin:0 auto; min-height:100vh; background:#F5F0EB; padding:24px 20px 90px; position:relative; }
+  h1 { font-family:Georgia,serif; font-size:20px; }
+  .sub { font-size:11px; color:#9A8B82; margin-top:2px; }
+  .tabs { display:flex; gap:8px; margin:18px 0 14px; }
+  .tabs div { flex:1; text-align:center; padding:9px 0; border-radius:99px; font-size:12px; font-weight:600; background:#fff; border:1px solid #E7DED4; color:#6B5B52; }
+  .tabs div.on { background:#8B5E3C; border-color:#8B5E3C; color:#fff; }
+  .card { background:#fff; border:1px solid #E7DED4; border-radius:16px; padding:16px; margin-bottom:12px; }
+  .lbl { font-size:13px; font-weight:600; }
+  .row { display:flex; justify-content:space-between; align-items:baseline; }
+  .big { font-family:Georgia,serif; font-size:18px; }
+  .bar { height:7px; background:#EFE7DE; border-radius:99px; overflow:hidden; margin:8px 0 4px; }
+  .bar i { display:block; height:100%; background:linear-gradient(90deg,#B58A68,#8B5E3C); border-radius:99px; }
+  .stat { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:14px; }
+  .stat .card { margin:0; text-align:center; padding:14px 4px; }
+  .stat .n { font-family:Georgia,serif; font-size:20px; }
+  .stat .t { font-size:10px; color:#9A8B82; margin-top:2px; }
+  .pill { font-size:10px; font-weight:700; padding:3px 10px; border-radius:99px; white-space:nowrap; }
+  .p-ok { background:#E8F3EA; color:#2E7D3A; } .p-warn { background:#FFF4E0; color:#B26A00; } .p-bad { background:#FDEDED; color:#C0392B; }
+  .g { display:flex; align-items:center; gap:11px; padding:10px 0; border-top:1px solid #F2EBE3; }
+  .g .ic { width:34px; height:34px; border-radius:10px; background:#F3E2D5; display:flex; align-items:center; justify-content:center; font-size:15px; flex:none; }
+  .g .nm { font-size:13px; font-weight:500; }
+  .g .ph { font-size:11px; color:#9A8B82; }
+  .btn { background:#8B5E3C; color:#fff; border:none; border-radius:12px; padding:12px; font-size:14px; font-weight:600; width:100%; }
+  .in { width:100%; border:1px solid #E7DED4; border-radius:12px; padding:11px 13px; font-size:13px; background:#fff; outline:none; margin-bottom:10px; }
+  .nav { position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:390px; background:#fff; border-top:1px solid #E7DED4; display:flex; z-index:40; padding-bottom:6px; }
+  .nav a { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 0 6px; font-size:10.5px; font-weight:600; color:#9A8B82; text-decoration:none; }
+  .nav a.on { color:#8B5E3C; }
+  .nav .ic { font-size:20px; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <h1>Anggaran</h1>
+  <div class="sub">Rp 100.0jt Total Budget · <span style="color:#8B5E3C;font-weight:600">ubah</span></div>
+
+  <div class="card" style="margin-top:16px">
+    <div class="row"><span class="sub">Terpakai</span><span class="lbl">Rp 39.500.000</span></div>
+    <div class="bar"><i style="width:39%"></i></div>
+    <div class="row"><span class="sub">Dana Nikah terkumpul</span><span class="lbl" style="color:#8B5E3C">Rp 25.000.000</span></div>
+  </div>
+
+  <div class="tabs">
+    <div>Budgeting</div>
+    <div class="on">Pengeluaran</div>
+    <div>Dana Nikah</div>
+  </div>
+
+  <div class="card">
+    <div class="row" style="margin-bottom:12px"><span class="lbl">Tambah Pengeluaran</span></div>
+    <div style="display:flex;gap:10px">
+      <select class="in" style="flex:1"><option>Venue</option><option>Catering</option><option>Busana</option></select>
+      <input class="in" style="flex:1" placeholder="Jumlah (Rp)">
+    </div>
+    <input class="in" placeholder="cth: DP venue">
+    <button class="btn">Tambah</button>
+  </div>
+
+  <div class="card">
+    <div class="row" style="margin-bottom:8px"><span class="lbl">Riwayat</span><span class="sub">Rp 39.5jt</span></div>
+    <div class="g"><div class="ic">🏛️</div><div style="flex:1"><div class="nm">DP venue</div><div class="ph">Venue · 20 Sep 2026</div></div><span class="lbl">Rp 15.000.000</span></div>
+    <div class="g"><div class="ic">🍽️</div><div style="flex:1"><div class="nm">DP catering 200 pax</div><div class="ph">Catering · 15 Sep 2026</div></div><span class="lbl">Rp 12.500.000</span></div>
+    <div class="g"><div class="ic">📸</div><div style="flex:1"><div class="nm">DP foto &amp; video</div><div class="ph">Foto/Video · 10 Sep 2026</div></div><span class="lbl">Rp 7.000.000</span></div>
+    <div class="g"><div class="ic">👗</div><div style="flex:1"><div class="nm">DP gaun pengantin</div><div class="ph">Busana · 5 Sep 2026</div></div><span class="lbl">Rp 5.000.000</span></div>
+  </div>
+
+  <div class="nav">
+    <a><span class="ic">🏠</span>Beranda</a>
+    <a><span class="ic">✅</span>Checklist</a>
+    <a class="on"><span class="ic">👛</span>Anggaran</a>
+    <a><span class="ic">👤</span>Profil</a>
+  </div>
+</div>
+</body>
+</html>

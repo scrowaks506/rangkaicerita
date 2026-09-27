@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  body { font-family:-apple-system,"Segoe UI",Roboto,sans-serif; background:#F5F0EB; color:#2B2320; }
+  .phone { width:390px; margin:0 auto; min-height:100vh; background:#F5F0EB; padding:24px 20px 90px; position:relative; }
+  h1 { font-family:Georgia,serif; font-size:20px; }
+  .sub { font-size:11px; color:#9A8B82; margin-top:2px; }
+  .card { background:#fff; border:1px solid #E7DED4; border-radius:16px; padding:16px; margin-bottom:12px; }
+  .stat { display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin:16px 0 14px; }
+  .stat .card { margin:0; text-align:center; padding:14px 4px; }
+  .stat .n { font-family:Georgia,serif; font-size:20px; }
+  .stat .n.br { color:#8B5E3C; }
+  .stat .t { font-size:10px; color:#9A8B82; margin-top:2px; }
+  .btn { background:#8B5E3C; color:#fff; border:none; border-radius:12px; padding:12px; font-size:14px; font-weight:600; width:100%; margin-bottom:12px; }
+  .pill { font-size:10px; font-weight:700; padding:3px 10px; border-radius:99px; white-space:nowrap; }
+  .p-ok { background:#E8F3EA; color:#2E7D3A; } .p-warn { background:#FFF4E0; color:#B26A00; } .p-bad { background:#FDEDED; color:#C0392B; }
+  .g { display:flex; align-items:center; gap:11px; padding:11px 0; border-top:1px solid #F2EBE3; }
+  .g .ic { width:34px; height:34px; border-radius:50%; background:#F3E2D5; display:flex; align-items:center; justify-content:center; font-size:14px; flex:none; }
+  .g .nm { font-size:13px; font-weight:500; }
+  .g .ph { font-size:11px; color:#9A8B82; }
+  .acts { display:flex; gap:4px; }
+  .mini { font-size:14px; padding:4px 6px; }
+  .nav { position:fixed; bottom:0; left:50%; transform:translateX(-50%); width:100%; max-width:390px; background:#fff; border-top:1px solid #E7DED4; display:flex; z-index:40; padding-bottom:6px; }
+  .nav a { flex:1; display:flex; flex-direction:column; align-items:center; gap:3px; padding:10px 0 6px; font-size:10.5px; font-weight:600; color:#9A8B82; text-decoration:none; }
+  .nav a.on { color:#8B5E3C; }
+  .nav .ic { font-size:20px; }
+</style>
+</head>
+<body>
+<div class="phone">
+  <h1>Daftar Tamu</h1>
+  <div class="sub">Kelola RSVP, QR check-in, dan undangan WhatsApp</div>
+
+  <div class="stat">
+    <div class="card"><div class="n">48</div><div class="t">Tamu</div></div>
+    <div class="card"><div class="n br">31</div><div class="t">Hadir</div></div>
+    <div class="card"><div class="n">38</div><div class="t">Kursi</div></div>
+  </div>
+
+  <button class="btn">＋ Tambah tamu</button>
+
+  <div class="card">
+    <div class="g"><div class="ic">👨</div><div style="flex:1"><div class="nm">Pak Budi Santoso</div><div class="ph">Keluarga pria · 0812-3456-7890</div></div><span class="pill p-ok">Hadir</span><span class="mini">💌</span></div>
+    <div class="g"><div class="ic">👩</div><div style="flex:1"><div class="nm">Bu Sari Wulandari</div><div class="ph">Keluarga wanita · 0813-9876-5432</div></div><span class="pill p-ok">Hadir</span><span class="mini">💌</span></div>
+    <div class="g"><div class="ic">🧑</div><div style="flex:1"><div class="nm">Rizky Pratama</div><div class="ph">Teman · 0856-1122-3344</div></div><span class="pill p-warn">Belum konfirmasi</span><span class="mini">💌</span></div>
+    <div class="g"><div class="ic">👩</div><div style="flex:1"><div class="nm">Nadia Kusuma</div><div class="ph">Rekan kerja · 0821-5566-7788</div></div><span class="pill p-bad">Tidak hadir</span><span class="mini">💌</span></div>
+    <div class="g"><div class="ic">🧑</div><div style="flex:1"><div class="nm">Agus Setiawan</div><div class="ph">Teman · 0857-2211-3344 · ✓ check-in</div></div><span class="pill p-ok">Hadir</span><span class="mini">💌</span></div>
+  </div>
+
+  <div class="nav">
+    <a><span class="ic">🏠</span>Beranda</a>
+    <a><span class="ic">✅</span>Checklist</a>
+    <a><span class="ic">👛</span>Anggaran</a>
+    <a class="on"><span class="ic">👤</span>Profil</a>
+  </div>
+</div>
+</body>
+</html>
