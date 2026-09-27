@@ -48,7 +48,7 @@ create policy "couple admin all"  on public.couples for all
   using (exists (select 1 from public.profiles p where p.id = auth.uid() and p.role='admin'));
 
 -- ============ MILESTONE ============
--- active: apakah milestone dipilih pasangan ini (mirror "Pilih Milestone")
+-- active: apakah milestone dipilih pasangan ini (field "Pilih Milestone")
 create table public.milestones (
   id          uuid primary key default uuid_generate_v4(),
   couple_id   uuid not null references public.couples(id) on delete cascade,
