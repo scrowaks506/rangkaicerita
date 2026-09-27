@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; -webkit-font-smoothing:antialiased; }
+  body { font-family:-apple-system,"Segoe UI",Roboto,sans-serif; background:#F5F0EB; color:#2B2320; }
+  h1,h2,h3 { font-family:Georgia,"Times New Roman",serif; }
+  .layout { display:flex; min-height:100vh; }
+  .side { width:230px; flex:none; background:#2B2320; color:#E7DED4; padding:20px 14px; display:flex; flex-direction:column; gap:4px; }
+  .brand { display:flex; align-items:center; gap:9px; padding:0 8px 16px; }
+  .brand .ic { font-size:22px; }
+  .brand b { font-family:Georgia,serif; font-size:16px; color:#fff; }
+  .brand small { display:block; font-size:9.5px; color:#9A8B82; letter-spacing:1px; text-transform:uppercase; }
+  .navi { padding:8px 0; border-top:1px solid #4A3F39; margin-top:6px; }
+  .navi a { display:flex; align-items:center; gap:10px; padding:9px 10px; border-radius:10px; color:#CBB9A8; text-decoration:none; font-size:13px; margin-bottom:2px; }
+  .navi a.on { background:#8B5E3C; color:#fff; font-weight:600; }
+  .navi a .ic { font-size:15px; width:18px; text-align:center; }
+  .navi .lbl { font-size:9px; color:#7A6E66; text-transform:uppercase; letter-spacing:1px; padding:12px 10px 5px; }
+  .badge { margin-left:auto; background:#8B5E3C; color:#fff; font-size:9.5px; padding:1px 7px; border-radius:99px; }
+  .adm { margin-top:auto; padding:12px 10px 0; border-top:1px solid #4A3F39; display:flex; align-items:center; gap:9px; }
+  .adm .av { width:32px; height:32px; border-radius:50%; background:#8B5E3C; color:#fff; display:flex; align-items:center; justify-content:center; font-size:13px; flex:none; }
+  .main { flex:1; padding:22px 28px; overflow-x:auto; }
+  .top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:20px; }
+  .top h1 { font-size:23px; }
+  .top p { font-size:12.5px; color:#8A7B72; margin-top:2px; }
+  .btn { background:#8B5E3C; color:#fff; border:none; border-radius:9px; padding:9px 15px; font-size:12.5px; font-weight:600; }
+  .stats { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; margin-bottom:20px; }
+  .stat { background:#fff; border:1px solid #EDE4DA; border-radius:14px; padding:16px; }
+  .stat .ic { font-size:22px; }
+  .stat b { display:block; font-size:24px; font-family:Georgia,serif; margin:5px 0 1px; }
+  .stat span { font-size:11px; color:#8A7B72; }
+  .delta { font-size:10.5px; font-weight:700; margin-top:6px; display:inline-block; padding:2px 8px; border-radius:99px; background:#E8F3EA; color:#2E7D3A; }
+  .cols { display:grid; grid-template-columns:1.6fr 1fr; gap:16px; }
+  .card { background:#fff; border:1px solid #EDE4DA; border-radius:14px; padding:16px; margin-bottom:16px; }
+  .card h3 { font-size:14.5px; margin-bottom:3px; }
+  .card .hint { font-size:11.5px; color:#8A7B72; margin-bottom:12px; }
+  table { width:100%; border-collapse:collapse; font-size:12.5px; }
+  th { text-align:left; font-size:10px; text-transform:uppercase; letter-spacing:.8px; color:#9A8B82; padding:8px; border-bottom:1.5px solid #E7DED4; }
+  td { padding:10px 8px; border-bottom:1px solid #F2EBE3; }
+  .pill { font-size:10px; font-weight:700; padding:3px 9px; border-radius:99px; white-space:nowrap; }
+  .p-ok { background:#E8F3EA; color:#2E7D3A; } .p-warn { background:#FFF4E0; color:#B26A00; }
+  .p-bad { background:#FDEDED; color:#C0392B; } .p-idle { background:#F1EEE9; color:#8A7B72; }
+  .p-pro { background:#E4EAF3; color:#3A5F8A; }
+  .who { display:flex; align-items:center; gap:9px; }
+  .who .av { width:30px; height:30px; border-radius:50%; background:#F3E2D5; display:flex; align-items:center; justify-content:center; font-size:13px; flex:none; }
+  .bar { height:7px; background:#EFE7DE; border-radius:99px; overflow:hidden; width:110px; }
+  .bar i { display:block; height:100%; background:linear-gradient(90deg,#B58A68,#8B5E3C); border-radius:99px; }
+  .frow { display:flex; align-items:center; gap:11px; padding:5px 0; }
+  .frow .fl { font-size:12px; width:118px; flex:none; }
+  .frow .fb { flex:1; height:26px; background:#EFE7DE; border-radius:7px; position:relative; overflow:hidden; }
+  .frow .fb i { position:absolute; inset:0 auto 0 0; background:linear-gradient(90deg,#C9A98F,#8B5E3C); border-radius:7px; display:flex; align-items:center; padding-left:9px; }
+  .frow .fb i b { font-size:11px; color:#fff; }
+  .frow .fv { font-size:11.5px; color:#8A7B72; width:70px; text-align:right; flex:none; }
+  .taskrow { display:flex; align-items:center; gap:10px; padding:9px; background:#FBF7F2; border-radius:10px; margin-bottom:10px; }
+  .taskrow .ti { width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:14px; flex:none; background:#FFF4E0; }
+  .btn-g { background:#E8F3EA; border:1px solid #BCDFC2; color:#2E7D3A; border-radius:9px; padding:5px 11px; font-size:11px; font-weight:600; }
+  .btn-r { background:#FDF3F1; border:1px solid #E5B8B1; color:#C0392B; border-radius:9px; padding:5px 11px; font-size:11px; font-weight:600; }
+</style>
+</head>
+<body>
+<div class="layout">
+  <div class="side">
+    <div class="brand"><div class="ic">💍</div><div><b>RangkaiCerita</b><small>Admin Panel</small></div></div>
+    <div class="navi">
+      <div class="lbl">Utama</div>
+      <a class="on" href="#"><span class="ic">📊</span>Dashboard</a>
+      <a href="#"><span class="ic">👥</span>Users <span class="badge">2</span></a>
+      <a href="#"><span class="ic">✅</span>Approvals</a>
+      <div class="lbl">Konten</div>
+      <a href="#"><span class="ic">📋</span>Milestone &amp; Task</a>
+      <a href="#"><span class="ic">🤝</span>Vendor</a>
+      <a href="#"><span class="ic">🎁</span>Rekomendasi</a>
+      <a href="#"><span class="ic">💌</span>Moderasi Ucapan</a>
+      <div class="lbl">Sistem</div>
+      <a href="#"><span class="ic">📈</span>Analytics</a>
+      <a href="#"><span class="ic">⚙️</span>Settings</a>
+      <a href="#"><span class="ic">🚪</span>Keluar</a>
+    </div>
+    <div class="adm"><div class="av">FT</div><div><b style="font-size:12px;color:#fff">Fathoni T.</b><small style="font-size:10px;color:#9A8B82">Super Admin</small></div></div>
+  </div>
+  <div class="main">
+    <div class="top"><div><h1>Dashboard</h1><p>RangkaiCerita · 27 September 2026</p></div><button class="btn">＋ Undang pasangan</button></div>
+    <div class="stats">
+      <div class="stat"><div class="ic">💍</div><b>1.248</b><span>Total pasangan terdaftar</span><span class="delta">↑ 12% bulan ini</span></div>
+      <div class="stat"><div class="ic">✅</div><b>892</b><span>Akun aktif 30 hari</span><span class="delta">↑ 8%</span></div>
+      <div class="stat"><div class="ic">⏳</div><b>14</b><span>Menunggu approval</span><span class="delta">→ 0 perubahan</span></div>
+      <div class="stat"><div class="ic">💎</div><b>318</b><span>Pengguna premium</span><span class="delta">↑ 25%</span></div>
+    </div>
+    <div class="cols">
+      <div>
+        <div class="card">
+          <h3>Pasangan terbaru</h3><div class="hint">5 pendaftaran terakhir</div>
+          <table>
+            <tr><th>Pasangan</th><th>Status</th><th>Progress</th><th>Tgl akad</th><th>Aksi</th></tr>
+            <tr><td><div class="who"><div class="av">💍</div><div><b style="font-size:12.5px">Rangga &amp; Mutia</b><small style="font-size:10.5px;color:#8A7B72">rangga.m@gmail.com</small></div></div></td><td><span class="pill p-ok">Aktif</span></td><td><div class="bar"><i style="width:72%"></i></div></td><td>12 Nov 2026</td><td><button class="btn-r">Suspend</button></td></tr>
+            <tr><td><div class="who"><div class="av">👰</div><div><b style="font-size:12.5px">Dewi &amp; Bagas</b><small style="font-size:10.5px;color:#8A7B82">dewi.pratiwi@yahoo.com</small></div></div></td><td><span class="pill p-warn">Pending</span></td><td><div class="bar"><i style="width:0%"></i></div></td><td>20 Des 2026</td><td><button class="btn-g">Approve</button></td></tr>
+            <tr><td><div class="who"><div class="av">🤵</div><div><b style="font-size:12.5px">Ilham &amp; Sari</b><small style="font-size:10.5px;color:#8A7B82">ilhamh@gmail.com</small></div></div></td><td><span class="pill p-ok">Aktif</span></td><td><div class="bar"><i style="width:34%"></i></div></td><td>5 Jan 2027</td><td><button class="btn-r">Suspend</button></td></tr>
+            <tr><td><div class="who"><div class="av">💐</div><div><b style="font-size:12.5px">Yoga &amp; Nabila</b><small style="font-size:10.5px;color:#8A7B82">yoga.p@outlook.com</small></div></div></td><td><span class="pill p-pro">Premium</span></td><td><div class="bar"><i style="width:91%"></i></div></td><td>18 Okt 2026</td><td><button class="btn-r">Suspend</button></td></tr>
+          </table>
+        </div>
+        <div class="card">
+          <h3>Funnel onboarding</h3><div class="hint">Dari daftar sampai undang tamu · 30 hari terakhir</div>
+          <div class="frow"><div class="fl">Daftar akun</div><div class="fb"><i style="width:100%"><b>100%</b></i></div><div class="fv">412 user</div></div>
+          <div class="frow"><div class="fl">Isi data nikah</div><div class="fb"><i style="width:84%"><b>84%</b></i></div><div class="fv">346 user</div></div>
+          <div class="frow"><div class="fl">Aktifkan milestone</div><div class="fb"><i style="width:61%"><b>61%</b></i></div><div class="fv">251 user</div></div>
+          <div class="frow"><div class="fl">Input anggaran</div><div class="fb"><i style="width:47%"><b>47%</b></i></div><div class="fv">194 user</div></div>
+          <div class="frow"><div class="fl">Tambah tamu</div><div class="fb"><i style="width:38%"><b>38%</b></i></div><div class="fv">157 user</div></div>
+          <div class="frow"><div class="fl">Upgrade premium</div><div class="fb"><i style="width:19%"><b>19%</b></i></div><div class="fv">78 user</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="card">
+          <h3>Perlu tindakan</h3><div class="hint">14 approval · 3 laporan ucapan</div>
+          <div class="taskrow"><div class="ti">⏳</div><div style="flex:1"><b style="font-size:12.5px">14 pendaftar menunggu</b><div style="font-size:10.5px;color:#8A7B72">Email terverifikasi</div></div><button class="btn-g">Review</button></div>
+          <div class="taskrow"><div class="ti">⚑</div><div style="flex:1"><b style="font-size:12.5px">3 ucapan dilaporkan</b><div style="font-size:10.5px;color:#8A7B82">Spam / tidak pantas</div></div><button class="btn-r">Cek</button></div>
+          <div class="taskrow"><div class="ti">🤝</div><div style="flex:1"><b style="font-size:12.5px">5 vendor mendaftar</b><div style="font-size:10.5px;color:#8A7B82">Menunggu verifikasi</div></div><button class="btn-g">Verifikasi</button></div>
+        </div>
+        <div class="card">
+          <h3>Statistik fitur</h3><div class="hint">Fitur paling sering dipakai minggu ini</div>
+          <div class="frow"><div class="fl">Checklist</div><div class="fb"><i style="width:93%"><b>93%</b></i></div><div class="fv">832</div></div>
+          <div class="frow"><div class="fl">Anggaran</div><div class="fb"><i style="width:81%"><b>81%</b></i></div><div class="fv">724</div></div>
+          <div class="frow"><div class="fl">Daftar Tamu</div><div class="fb"><i style="width:64%"><b>64%</b></i></div><div class="fv">571</div></div>
+          <div class="frow"><div class="fl">Vendor</div><div class="fb"><i style="width:42%"><b>42%</b></i></div><div class="fv">375</div></div>
+          <div class="frow"><div class="fl">Timeline</div><div class="fb"><i style="width:31%"><b>31%</b></i></div><div class="fv">276</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

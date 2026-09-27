@@ -62,3 +62,6 @@ Vercel (gratis) + Supabase free tier. Build standalone:
 ```bash
 npm run build && node .next/standalone/server.js   # ~10MB RAM
 ```
+
+## Mockup / Tampilan
+Lihat `docs/mockups/` — preview admin panel (dashboard & manajemen user) + tema desain.
